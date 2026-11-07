@@ -31,3 +31,21 @@ python3 -m unittest -v
 - `data/notes.json` — файл даних, створюється автоматично;
 - `app.log` — журнал подій, створюється автоматично.
 
+## Серверна частина — практика, частина 2
+
+У папці `server/` знаходиться REST API на Node.js + Express. Він містить:
+
+- CRUD API для нотаток, категорій і тегів;
+- SQLite та Sequelize ORM;
+- DI-контейнер Awilix;
+- CORS, журналювання запитів і централізовану обробку помилок;
+- Swagger UI за адресою `/api-docs`.
+
+Запуск серверної частини:
+
+```bash
+cd server
+npm install
+cp .env.example .env
+npm start
+```
