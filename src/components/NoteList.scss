@@ -1,0 +1,4 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+.note-list { display: grid; gap: .9rem; }
+.note-card { @include card; padding: 1rem; &__heading, &__footer { display: flex; align-items: center; justify-content: space-between; gap: .75rem; } h3 { margin: 0; } p { white-space: pre-wrap; } span, small { background: #e8eefb; color: $primary-dark; border-radius: 999px; padding: .25rem .55rem; } small { margin-right: .35rem; } }

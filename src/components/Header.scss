@@ -1,0 +1,2 @@
+@use '../styles/variables' as *;
+.header { background: $surface; border-bottom: 1px solid $border; &__content { min-height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; } &__brand { color: $text; font-weight: 800; text-decoration: none; } &__nav { display: flex; gap: 1rem; a { color: $muted; text-decoration: none; &.active { color: $primary; font-weight: 700; } } } }

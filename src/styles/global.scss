@@ -1,0 +1,21 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+* { box-sizing: border-box; }
+body { margin: 0; background: $background; color: $text; font-family: Inter, system-ui, sans-serif; }
+button, input, select, textarea { font: inherit; }
+button { cursor: pointer; border: 0; border-radius: 8px; background: $primary; color: white; padding: .7rem 1rem; &:hover { background: $primary-dark; } &:disabled { opacity: .55; cursor: not-allowed; } }
+input, select, textarea { width: 100%; border: 1px solid $border; border-radius: 8px; padding: .65rem; margin-top: .35rem; background: white; }
+label { display: block; font-weight: 600; }
+.container { width: min(1100px, calc(100% - 2rem)); margin: 0 auto; }
+.app-shell { min-height: 100vh; }
+.hero { padding: 2.3rem 0 1.2rem; max-width: 720px; h1 { margin: .15rem 0; font-size: clamp(2rem, 5vw, 3.2rem); } p { color: $muted; font-size: 1.05rem; } }
+.eyebrow { color: $primary !important; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; font-size: .78rem !important; }
+.status { padding: .85rem 1rem; border-radius: 8px; background: #e8eefb; &--error { background: #fde9e9; color: #7c2525; } &--success { background: #e9f7ed; color: #216437; } }
+.inline-form, .filters { @include card; display: flex; gap: 1rem; align-items: end; padding: 1rem; margin: 1rem 0; .inline-form label, label { flex: 1; } }
+.workspace { display: grid; grid-template-columns: minmax(280px, .85fr) minmax(0, 1.5fr); gap: 1.25rem; padding: 1rem 0 3rem; }
+.note-form, .about { @include card; padding: 1.25rem; h2 { margin-top: 0; } label { margin: .9rem 0; } }
+.tag-input { border: 1px solid $border; border-radius: 8px; margin: 1rem 0; padding: .7rem; legend { font-weight: 600; } &__items { display: flex; flex-wrap: wrap; gap: .7rem; label { font-weight: 400; } input { width: auto; margin: 0 .25rem 0 0; } } &__create { display: flex; gap: .5rem; margin-top: .6rem; align-items: end; input { margin: 0; } } }
+.empty { color: $muted; padding: 1rem; text-align: center; }
+.button--danger { background: $danger; }
+@include mobile { .workspace { grid-template-columns: 1fr; } .inline-form, .filters, .tag-input__create { flex-direction: column; align-items: stretch; } }

@@ -1,0 +1,12 @@
+@use 'variables' as *;
+
+@mixin card {
+  background: $surface;
+  border: 1px solid $border;
+  border-radius: $radius;
+  box-shadow: 0 6px 18px rgba(31, 55, 92, .06);
+}
+
+@mixin mobile {
+  @media (max-width: 760px) { @content; }
+}
